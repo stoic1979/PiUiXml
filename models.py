@@ -16,6 +16,18 @@ class Pagination:
         self.total = total
         self.count = count
 
+    def show_pagination_details(self):
+        print "\n================[ Pagination ]=================="
+        print "current_page . . : ", self.current_page
+        print "last_page. . . . : ", self.last_page
+        print "per_page . . . . : ", self.per_page
+        print "has_more_pages . : ", self.has_more_pages
+        print "first_item . . . : ", self.first_item
+        print "last_item . . . .: ", self.last_item
+        print "total . . . . . .: ", self.total
+        print "count . . . . . .: ", self.count
+        print "================================================\n"
+
 
 class Product:
     def __init__(self, id, name, dispensary_id, dispensary_name,
@@ -45,7 +57,38 @@ class Product:
         self.updated_at = updated_at
 
     def __str__(self):
-        return "Product: %s" % str(self.name)
+        return "Product: %s, category: %s" % \
+               (str(self.name), str(self.category))
+
+    def show_product_details(self):
+        print "\n================[ Product ]====================="
+        print "id . . . . . . . . . : ", self.id
+        print "name . . . . . . . . : ", self.name
+        print "dispensary_id . . . .: ", self.dispensary_id
+        print "dispensary_valuename : ", self.dispensary_valuename
+        print "canabis_brand . . . .: ", self.canabis_brand
+        print "canabis_strain. . . .: ", self.canabis_strain
+        print "category . . . . . . : ", self.category
+        print "subcategory . . . . .: ", self.subcategory
+        print "thc_level . . . . . .: ", self.thc_level
+        print "cbd_level . . . . . .: ", self.cbd_level
+        print "cbn_level . . . . . .: ", self.cbn_level
+        print "thc_levevaluel_type .: ", self.thc_levevaluel_type
+        print "cbd_level_type . . . : ", self.cbd_level_type
+        print "cbn_level_type . . . : ", self.cbn_level_type
+        print "prices . . . . . . . : "
+        for price in self.prices:
+            print "     ", price
+        print "urls . . . . . . . . : "
+        for url in self.urls:
+            print "    ", url
+        print "images . . . . . . . : "
+        for image in self.images:
+            print "    ", image
+        print "description . . . . .: ", self.description
+        print "created_at . . . . . : ", self.created_at
+        print "updated_at . . . . . : ", self.updated_at
+        print "================================================\n"
 
 
 class UrlInfo:
@@ -57,14 +100,26 @@ class UrlInfo:
         return "UrlInfo: admin=%s, public=%s" % (str(self.admin),
                                                  str(self.public))
 
+    def show_url_info_details(self):
+        print "\n================[ UrlInfo ]====================="
+        print "admin . .: ", self.admin
+        print "public . : ", self.public
+        print "==============================================\n"
+
 
 class Price:
-    def __init__(self, cost, value):
-        self.cost = cost
+    def __init__(self, unit, value):
+        self.unit = unit
         self.value = value
 
     def __str__(self):
-        return "Price: %s" % str(self.value)
+        return "Price: %s %s" % (str(self.value), str(self.unit))
+
+    def show_price_details(self):
+        print "\n================[ Price ]====================="
+        print "cost . .: ", self.cost
+        print "value . : ", self.value
+        print "==============================================\n"
 
 
 class Image:
@@ -73,7 +128,13 @@ class Image:
         self.url = url
 
     def __str__(self):
-        return "Image: %s" % str(self.url)
+        return "Image: %s , Main : %s" % (str(self.url), str(self.main))
+
+    def show_image_details(self):
+        print "\n================[ Image ]===================="
+        print "main . : ", self.main
+        print "url . .: ", self.url
+        print "==============================================\n"
 
 
 if __name__ == "__main__":
