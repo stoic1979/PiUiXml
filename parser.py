@@ -2,8 +2,9 @@
 # script for parsing products' xml
 # and creating data models to be used by ui
 #
+
 import xml.etree.ElementTree as ET
-from models import Pagination, Product, Price, UrlInfo, Image
+from models import Pagination, Data, Image, Category, Unit, Logo, Links
 
 
 class ProductParser:
@@ -14,33 +15,30 @@ class ProductParser:
         self.root = tree.getroot()
 
         for child in self.root:
-            if child.tag == 'products':
-                self.products = child
-
-            if child.tag == 'pagination':
-                self.pagination = child
+            if child.tag == 'meta':
+                self.meta = child
 
     def get_pagination(self):
         """
         function parser the pagination xml file
         """
+        for pagination in self.meta:
+            total = pagination.find('total').text
+            count = pagination.find('count').text
+            per_page = pagination.find('per_page').text
+            current_page = pagination.find('current_page').text
+            total_pages = pagination.find('total_pages').text
 
-        print "getting pagination"
+            links = []
 
-        current_page = self.pagination.find('current_page').text
-        last_page = self.pagination.find('last_page').text
-        per_page = self.pagination.find('per_page').text
-        has_more_pages = self.pagination.find('has_more_pages').text
-        first_item = self.pagination.find('first_item').text
-        last_item = self.pagination.find('last_item').text
-        total = self.pagination.find('total').text
-        count = self.pagination.find('count').text
+            for child in pagination:
+                if child.tag == 'links':
+                    next = child.find('next').text
+                    links.append(Links(next))
+            return Pagination(total, count, per_page,
+                              current_page, total_pages, links)
 
-        return Pagination(current_page, last_page, per_page,
-                          has_more_pages, first_item,
-                          last_item, total, count)
-
-    def get_products(self):
+    def get_all_data(self):
         """
         function parses the products xml file
         and returns list of products
@@ -48,61 +46,94 @@ class ProductParser:
 
         lst = []
 
-        print "getting products"
-        for product in self.products.findall('product'):
-            id = product.find('id').text
-            name = product.find('name').text
-            dispensary_id = product.find('dispensary_id').text
-            dispensary_name = product.find('dispensary_name').text
-            canabis_brand = product.find('canabis_brand').text
-            canabis_strain = product.find('canabis_strain').text
-            category = product.find('category').text
-            subcategory = product.find('subcategory').text
-            thc_level = product.find('thc_level').text
-            cbd_level = product.find('cbd_level').text
-            cbn_level = product.find('cbn_level').text
-            thc_level_type = product.find('thc_level_type').text
-            cbd_level_type = product.find('cbd_level_type').text
-            cbn_level_type = product.find('cbn_level_type').text
-
-            description = product.find('description').text
-            created_at = product.find('created_at').text
-            updated_at = product.find('updated_at').text
-
-            prices = []
-            urls = []
-            images = []
-
-            for child in product:
-                if child.tag == 'prices':
-                    for cost in child.findall('cost'):
-                        prices.append(Price(cost.attrib['unit'], cost.text))
-
-                if child.tag == 'urls':
-                    admin = child.find('admin').text
-                    public = child.find('public').text
-                    urls.append(UrlInfo(admin, public))
-
-                if child.tag == 'images':
-                    for image in child.findall('image'):
-                        images.append(Image(image.attrib['main'], image.text,))
-
-            lst.append(Product(id, name, dispensary_id, dispensary_name,
-                               canabis_brand, canabis_strain,
-                               category, subcategory, thc_level, cbd_level,
-                               cbn_level, thc_level_type, cbd_level_type,
-                               cbn_level_type, prices, urls, images,
-                               description, created_at, updated_at))
+        for data in self.root.findall('data'):
+            lst.append(self.process_data_tag(data))
 
         return lst
 
+    def process_data_tag(self, data):
+
+        id = data.find('id').text
+        name = data.find('name').text
+        description = data.find('description').text
+        updated_at = data.find('updated_at').text
+        created_at = data.find('created_at').text
+
+        category = []
+        units = []
+        images = []
+        logo = []
+
+        # processing all child tags of data
+        for child in data:
+
+            # getting <category> from data
+            if child.tag == 'category':
+                id = child.find('id').text
+                name = child.find('name').text
+                category.append(Category(id, name))
+
+            # getting <units> from data
+            if child.tag == 'units':
+                for data_tag in child:
+                    id = data_tag.find('id').text
+                    name = data_tag.find('name').text
+                    key = data_tag.find('key').text
+                    value = data_tag.find('value').text
+                    units.append(Unit(id, name, key, value))
+
+            # getting <images> from data
+            if child.tag == 'images':
+                for data_tag in child:
+
+                    id = data_tag.find('id').text
+                    name = data_tag.find('name').text
+                    thumb = data_tag.find('thumb').text
+                    aspectRatio = data_tag.find('aspectRatio').text
+                    listing_medium = data_tag.find('listing_medium').text
+                    listing_small = data_tag.find('listing_small').text
+                    listing_large = data_tag.find('listing_large').text
+                    square_medium = data_tag.find('square_medium').text
+                    square_small = data_tag.find('square_small').text
+                    square_large = data_tag.find('square_large').text
+
+                    images.append(Image(id, name, thumb, aspectRatio,
+                                        listing_medium, listing_small,
+                                        listing_large, square_medium,
+                                        square_small, square_large))
+
+            # getting <logo> from data
+            if child.tag == 'logo':
+                for data_tag in child:
+
+                    id = data_tag.find('id').text
+                    name = data_tag.find('name').text
+                    thumb = data_tag.find('thumb').text
+                    aspectRatio = data_tag.find('aspectRatio').text
+                    listing_medium = data_tag.find('listing_medium').text
+                    listing_small = data_tag.find('listing_small').text
+                    listing_large = data_tag.find('listing_large').text
+                    square_medium = data_tag.find('square_medium').text
+                    square_small = data_tag.find('square_small').text
+                    square_large = data_tag.find('square_large').text
+
+                    logo.append(Logo(id, name, thumb, aspectRatio,
+                                     listing_medium, listing_small,
+                                     listing_large, square_medium,
+                                     square_small, square_large))
+
+        return Data(id, name, description, category, units, images,
+                    updated_at, created_at, logo)
+
 
 if __name__ == "__main__":
-    pp = ProductParser('products.xml')
+    pp = ProductParser('test.xml')
 
-    products = pp.get_products()
-    for product in products:
-        product.show_product_details()
+    # getting all data
+    data = pp.get_all_data()
+    for product in data:
+        product.show_data_details()
 
+    # getting pagination information
     pagination = pp.get_pagination()
     pagination.show_pagination_details()

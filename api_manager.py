@@ -47,7 +47,10 @@ class ApiManager:
 
         print "[INFO] get_products_xml() getting xml for url: %s" % url
 
-        r = requests.get(url)
+        headers = {'accept': 'application/vnd.greenrush.v2+xml',
+                   'authorization': 'Bearer %s' % token}
+
+        r = requests.get(url, headers=headers)
         print r.status_code
         print r.headers
         print r.content

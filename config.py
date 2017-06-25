@@ -11,6 +11,7 @@ Config file to edit following
     - Change amount of time between XML updates
 """
 
+
 class Config:
 
     def __init__(self, file_path):
@@ -30,4 +31,3 @@ class Config:
 
         # FIXME - read config.ini in future and return categories from it
         return ['Edibles', 'Topicals', 'Drinks']
-
