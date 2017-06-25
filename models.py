@@ -53,6 +53,10 @@ class Data:
         self.created_at = created_at
         self.logo = logo
 
+    def title_str(self):
+        #return "%s %s" % (str(self.name), str(self.units))
+        return self.name
+
     def __str__(self):
         return "Product: %s, category: %s" % \
                (str(self.name), str(self.category))

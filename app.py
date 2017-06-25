@@ -1,8 +1,11 @@
-import kivy
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.label import Label
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.config import Config
+# Config.set('graphics', 'fullscreen', 'fake')
+Config.set('graphics', 'fullscreen', 1)
+
+
 
 # Builder.load_file("main.kv")
 Builder.load_file("second.kv")
@@ -22,9 +25,10 @@ sm.add_widget(SecondScreen(name='second'))
 
 class MyApp(App):
 
+    data = ['A', 'B', 'C']
+
     def build(self):
         return sm
-
 
 if __name__ == '__main__':
     MyApp().run()
