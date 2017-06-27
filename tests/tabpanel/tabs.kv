@@ -1,0 +1,29 @@
+<Test>:
+    size_hint: 1, 1
+    #pos_hint: {'center_x': .5, 'center_y': .5}
+    tab_pos: 'top_mid'
+    do_default_tab: False
+
+    TabbedPanelItem:
+        text: 'System'
+        Label:
+            text: 'First tab content area'
+    TabbedPanelItem:
+        text: 'Menu'
+        BoxLayout:
+            Label:
+                text: 'Second tab Label content area'
+            Button:
+                text: 'Button that does nothing'
+
+    TabbedPanelItem:
+        text: 'Inventory'
+        Label:
+            text: 'First tab content area'
+
+    TabbedPanelItem:
+        text: 'Log'
+        RstDocument:
+            text:
+                '\\n'.join(("Hello world", "-----------",
+                "You are in the third tab."))
