@@ -96,6 +96,11 @@ class ProductParser:
 
         return lst
 
+def get_products():
+    pp = ProductParser('products.xml')
+
+    return pp.get_products()
+
 
 if __name__ == "__main__":
     pp = ProductParser('products.xml')

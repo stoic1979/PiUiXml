@@ -5,7 +5,6 @@ from kivy.lang import Builder
 Builder.load_file("tabs.kv")
 
 
-
 class Test(TabbedPanel):
     pass
 
