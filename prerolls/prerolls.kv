@@ -1,6 +1,6 @@
 #:import lv kivy.uix.listview
 #:import la kivy.adapters.listadapter
-#:import get_data products_parser.get_products
+#:import get_products_by_category products_parser.get_products_by_category
 
 <MainScreen>:
     BoxLayout:
@@ -15,6 +15,7 @@
                 size_hint: 1,1
                 rgba: 1,0,1,5
                 text: 'PREROLLS'
+                font_name: 'GothamMedium'
 
         BoxLayout:
 
@@ -24,12 +25,13 @@
                 Button:
                     size_hint: 1,.1
                     text: 'SATIVA'
+                    font_name: 'GothamMedium'
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_data()],
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -38,12 +40,13 @@
                 Button:
                     size_hint: 1,.1
                     text: 'HYBRID'
+                    font_name: 'GothamMedium'
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_data()],
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Hybrid')],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -52,12 +55,13 @@
                 Button:
                     size_hint: 1,.1
                     text: 'INDICA'
+                    font_name: 'GothamMedium'
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_data()],
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
