@@ -15,6 +15,44 @@
                 text: 'EDIBLES'
 
             ListView:
+
+                id: list_view_id
+                size_hint: .9,1
+                height:25
+                adapter:
+
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+
+        BoxLayout:
+            right_padding: 5
+            orientation: 'vertical'
+            halign: 'left'
+            Label:
+                font_color:
+                    rgba: 1,0,1,1
+                size_hint: .9,.1
+                rgba: 1,0,1,5
+                text: 'CONCENTRATE'
+            ListView:
+
+                id: list_view_id
+                size_hint: .9,1
+
+                adapter:
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+            Label:
+                size_hint: .9,.1
+                rgba: 1,0,1,5
+                text: 'TOPICALS'
+            ListView:
                 id: list_view_id
                 size_hint: .9,1
 
@@ -30,13 +68,33 @@
             orientation: 'vertical'
             halign: 'left'
             Label:
-                rgba: 1,0,1,5
-                text: 'CONCENTRATE'
-
-        BoxLayout:
-            right_padding: 5
-            orientation: 'vertical'
-            halign: 'left'
-            Label:
+                size_hint: .9,.1
                 rgba: 1,0,1,5
                 text: 'CBD PRODUCTS'
+
+            ListView:
+                id: list_view_id
+                size_hint: .9,1
+
+                adapter:
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+
+            Label:
+                size_hint: .9,.1
+                rgba: 1,0,1,5
+                text: 'VAPE PRODUCTS'
+
+            ListView:
+                id: list_view_id
+                size_hint: .9,1
+
+                adapter:
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)

@@ -54,7 +54,7 @@ class Data:
         self.logo = logo
 
     def title_str(self):
-        #return "%s %s" % (str(self.name), str(self.units))
+        # return "%s %s" % (str(self.name), str(self.units))
         return self.name
 
     def __str__(self):

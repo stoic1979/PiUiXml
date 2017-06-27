@@ -125,10 +125,11 @@ class ProductParser:
         return Data(id, name, description, category, units, images,
                     updated_at, created_at, logo)
 
+
 def get_data():
     pp = ProductParser('test.xml')
     return pp.get_all_data()
-    #return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L' , 'M']
+    # return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L' , 'M']
 
 
 if __name__ == "__main__":
