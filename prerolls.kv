@@ -1,0 +1,65 @@
+#:import lv kivy.uix.listview
+#:import la kivy.adapters.listadapter
+#:import get_data parser.get_data
+
+<MainScreen>:
+    BoxLayout:
+        size_hint: 1,1
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1,.15
+            #right_padding: 5
+            #halign: 'left'
+            Label:
+                rgba: 1,0,1,5
+                size_hint: 1,1
+                rgba: 1,0,1,5
+                text: 'PREROLLS'
+
+        BoxLayout:
+
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.1
+                    text: 'SATIVA'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.1
+                    text: 'HYBRID'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.1
+                    text: 'INDICA'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+
