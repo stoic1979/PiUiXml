@@ -47,8 +47,6 @@ class ProductParser:
         """
 
         lst = []
-
-        print "getting products"
         for product in self.products.findall('product'):
             id = product.find('id').text
             name = product.find('name').text
@@ -96,13 +94,28 @@ class ProductParser:
 
         return lst
 
-def get_products():
+
+def get_products_by_category(category, subcategory):
+    pp = ProductParser('products.xml')
+
+    return [product for product in pp.get_products() if product.category == category and product.subcategory == subcategory]
+
+
+
+def get_all_products():
     pp = ProductParser('products.xml')
 
     return pp.get_products()
 
 
 if __name__ == "__main__":
+
+    print get_products_by_category('PreRolls', 'Satvia')
+    print get_products_by_category('PreRolls', 'Hybrid')
+    print get_products_by_category('PreRolls', 'Indica')
+
+
+    """
     pp = ProductParser('products.xml')
 
     products = pp.get_products()
@@ -111,3 +124,4 @@ if __name__ == "__main__":
 
     pagination = pp.get_pagination()
     pagination.show_pagination_details()
+    """
