@@ -1,0 +1,84 @@
+<Test>:
+    size_hint: 1, 1
+    #pos_hint: {'center_x': .5, 'center_y': .5}
+    tab_pos: 'top_mid'
+    do_default_tab: False
+
+###################################################################
+#                                                                 #
+#                     LOG SCREEN                                  #
+#                                                                 #
+###################################################################
+    TabbedPanelItem:
+        text: 'System'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                size_hint: 1.0,.25
+                text: 'UPTIME  365:11:15:30'
+            Label:
+                size_hint: 1.0,.25
+                text: 'LAST  SERVER  CONTACT  365:11:15:30'
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1.0, .6
+
+                Label:
+                    size_hint: .2, 1
+                    text: ''
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, .7
+                    padding: 30
+                    Label:
+                        size_hint: .5, 1
+                        text: 'API KEY'
+                    TextInput:
+                        size_hint: .5, 1
+                        text: ''
+                Label:
+                    size_hint: .2, 1
+                    text: ''
+            AnchorLayout:
+                Button:
+                    size_hint: .25, .25
+                    text: "PI SYSTEM UPDATE"
+
+            Label:
+                text: ""
+
+###################################################################
+#                                                                 #
+#                     LOG SCREEN                                  #
+#                                                                 #
+###################################################################
+    TabbedPanelItem:
+        text: 'Menu'
+        BoxLayout:
+            Label:
+                text: 'Second tab Label content area'
+            Button:
+                text: 'Button that does nothing'
+
+###################################################################
+#                                                                 #
+#                     LOG SCREEN                                  #
+#                                                                 #
+###################################################################
+    TabbedPanelItem:
+        text: 'Inventory'
+        Label:
+            text: 'First tab content area'
+
+
+###################################################################
+#                                                                 #
+#                     LOG SCREEN                                  #
+#                                                                 #
+###################################################################
+    TabbedPanelItem:
+        text: 'Log'
+        RstDocument:
+            text:
+                '\\n'.join(("Hello world", "-----------",
+                "You are in the third tab."))
