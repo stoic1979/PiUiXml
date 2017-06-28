@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.lang import Builder
 
-Builder.load_file("tabs.kv")
+Builder.load_file("menu.kv")
 
 
 class Test(TabbedPanel):
