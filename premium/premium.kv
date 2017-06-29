@@ -1,0 +1,175 @@
+#:import lv kivy.uix.listview
+#:import la kivy.adapters.listadapter
+#:import get_products_by_category products_parser.get_products_by_category
+
+<ListItemButton>:
+    selected_color: 0, 0, 1, 1
+    deselected_color:  255,255,255,1
+    color: 0, 0, 0, 1
+
+<MainScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        ##########################################################
+        #                 TOP BAR - EXTRACTS                     #
+        ##########################################################
+        BoxLayout:
+            size_hint: .20,1
+            orientation: 'vertical'
+            ListView:
+                id: list_view_id
+                size_hint: 1,1
+                adapter:
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1,.1
+                    text: 'OTHER'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+        ##########################################################
+        #                 TOP BAR - EXTRACTS                     #
+        ##########################################################
+        BoxLayout:
+            size_hint: .6,1
+            orientation: 'vertical'
+            Label:
+                size_hint: 1,.1
+                text: 'PREMIUM SHELF'
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'SATIVA'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'HYBRID'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'INDICA'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+            Label:
+                size_hint: 1,.1
+                text: 'TOP SHELF'
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'SATIVA'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'HYBRID'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'INDICA'
+                    ListView:
+                        id: list_view_id
+                        size_hint: 1,1
+                        adapter:
+                            la.ListAdapter(
+                            data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                            selection_mode='single',
+                            allow_empty_selection=False,
+                            cls=lv.ListItemButton)
+
+            ##########################################################
+            #                        other                           #
+            ##########################################################
+        BoxLayout:
+            size_hint: .20,1
+            orientation: 'vertical'
+            ListView:
+                id: list_view_id
+                size_hint: 1,1
+                adapter:
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1,.1
+                    text: 'CAB FLOWER'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
