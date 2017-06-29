@@ -1,0 +1,127 @@
+    #:import lv kivy.uix.listview
+#:import la kivy.adapters.listadapter
+#:import get_products_by_category products_parser.get_products_by_category
+<ListItemButton>:
+    selected_color: 0, 0, 1, 1
+    deselected_color:  255,255,255,1
+    color: 0, 0, 0, 1
+<MainScreen>:
+    BoxLayout:
+        size_hint: 1,1
+        orientation: 'vertical'
+
+        ##########################################################
+        #                 TOP BAR - EXTRACTS                     #
+        ##########################################################
+        BoxLayout:
+            size_hint: 1,.15
+            #right_padding: 5
+            #halign: 'left'
+            Label:
+                rgba: 1,0,1,5
+                size_hint: 1,1
+                rgba: 1,0,1,5
+                text: 'EXTRACTS'
+                font_name: 'GothamMedium'
+
+        ##########################################################
+        #                 Vapes                                  #
+        ##########################################################
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.1
+                    text: 'VAPES'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Button:
+                    size_hint: 1,.1
+                    text: 'SYRINGES'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Button:
+                    margin: 20
+                    size_hint: 1,.1
+                    text: 'ACCESSORIES'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+            ##########################################################
+            #                 Concentrates                           #
+            ##########################################################
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.03
+                    text: 'CONCENTRATES'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Hybrid')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+            ##########################################################
+            #                        other                           #
+            ##########################################################
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    size_hint: 1,.06
+                    text: 'OTHER'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Button:
+                    size_hint: 1,.06
+                    text: 'CAT 4'
+                    font_name: 'GothamMedium'
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
