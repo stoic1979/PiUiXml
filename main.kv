@@ -7,18 +7,44 @@
     BoxLayout:
         orientation: 'horizontal'
         BoxLayout:
-            #right_padding: 5
             orientation: 'vertical'
-            #halign: 'left'
             Label:
-                size_hint: .9,.1
-                rgba: 1,0,1,5
-                text: 'EDIBLES'
-
+                size_hint: 1,.1
+                text: "EDILBLES"
             ListView:
-
                 id: list_view_id
-                size_hint: .9,1
+                size_hint: 1,1
+                height:25
+                adapter:
+
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                size_hint: 1,.22
+                text: "CONCENTRATE"
+            ListView:
+                id: list_view_id
+                size_hint: 1,1
+                height:25
+                adapter:
+
+                    la.ListAdapter(
+                    data=[product.title_str() for product in get_data()],
+                    selection_mode='single',
+                    allow_empty_selection=False,
+                    cls=lv.ListItemButton)
+            Label:
+                padding_top: 20
+                size_hint: 1,.21
+                text: "TOPICALS"
+            ListView:
+                id: list_view_id
+                size_hint: 1,1
                 height:25
                 adapter:
 
@@ -29,54 +55,16 @@
                     cls=lv.ListItemButton)
 
         BoxLayout:
-            right_padding: 5
             orientation: 'vertical'
-            halign: 'left'
             Label:
-
-                size_hint: .9,.1
-                rgba: 1,0,1,5
-                text: 'CONCENTRATE'
-            ListView:
-
-                id: list_view_id
-                size_hint: .9,1
-
-                adapter:
-                    la.ListAdapter(
-                    data=[product.title_str() for product in get_data()],
-                    selection_mode='single',
-                    allow_empty_selection=False,
-                    cls=lv.ListItemButton)
-            Label:
-                size_hint: .9,.1
-                rgba: 1,0,1,5
-                text: 'TOPICALS'
+                size_hint: 1,.21
+                text: "CBD PRODUCTS"
             ListView:
                 id: list_view_id
-                size_hint: .9,1
-
+                size_hint: 1,1
+                height:25
                 adapter:
-                    la.ListAdapter(
-                    data=[product.title_str() for product in get_data()],
-                    selection_mode='single',
-                    allow_empty_selection=False,
-                    cls=lv.ListItemButton)
 
-        BoxLayout:
-            right_padding: 5
-            orientation: 'vertical'
-            halign: 'left'
-            Label:
-                size_hint: .9,.1
-                rgba: 1,0,1,5
-                text: 'CBD PRODUCTS'
-
-            ListView:
-                id: list_view_id
-                size_hint: .9,1
-
-                adapter:
                     la.ListAdapter(
                     data=[product.title_str() for product in get_data()],
                     selection_mode='single',
@@ -84,15 +72,15 @@
                     cls=lv.ListItemButton)
 
             Label:
-                size_hint: .9,.1
-                rgba: 1,0,1,5
-                text: 'VAPE PRODUCTS'
-
+                padding_top: 20
+                size_hint: 1,.1
+                text: "VAPE PRODUCTS"
             ListView:
                 id: list_view_id
-                size_hint: .9,1
-
+                size_hint: 1,1
+                height:25
                 adapter:
+
                     la.ListAdapter(
                     data=[product.title_str() for product in get_data()],
                     selection_mode='single',

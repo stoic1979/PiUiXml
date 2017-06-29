@@ -6,7 +6,7 @@
 
 ###################################################################
 #                                                                 #
-#                     LOG SCREEN                                  #
+#                   SYSTEM SCREEN                                 #
 #                                                                 #
 ###################################################################
     TabbedPanelItem:
@@ -49,20 +49,28 @@
 
 ###################################################################
 #                                                                 #
-#                     LOG SCREEN                                  #
+#                     MENU SCREEN                                 #
 #                                                                 #
 ###################################################################
     TabbedPanelItem:
         text: 'Menu'
         BoxLayout:
-            Label:
-                text: 'Second tab Label content area'
-            Button:
-                text: 'Button that does nothing'
+            orientation: 'vertical'
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'THEME'
+                TextInput:
+                    size_hint: .5, 1
+                    text: ''
 
 ###################################################################
 #                                                                 #
-#                     LOG SCREEN                                  #
+#                     Inventory SCREEN                            #
 #                                                                 #
 ###################################################################
     TabbedPanelItem:
