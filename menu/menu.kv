@@ -1,3 +1,4 @@
+
 <Test>:
     size_hint: 1, 1
     #pos_hint: {'center_x': .5, 'center_y': .5}
@@ -65,8 +66,59 @@
                     size_hint: .5, 1
                     text: 'THEME'
                 TextInput:
-                    size_hint: .5, 1
                     text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'GOOGLE FONT'
+                TextInput:
+                    text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'FONT SIZE'
+                TextInput:
+                    text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'FONT COLOR'
+                TextInput:
+                    text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'SCROLL RATE'
+                TextInput:
+                    text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 1, .7
+                padding: 30
+
+                Label:
+                    size_hint: .5, 1
+                    text: 'UPDATE MENU'
+                TextInput:
+                    text: ''
+            Label:
+                text: 'CATEGORIES TO DISPLAY'
 
 ###################################################################
 #                                                                 #
@@ -86,7 +138,5 @@
 ###################################################################
     TabbedPanelItem:
         text: 'Log'
-        RstDocument:
-            text:
-                '\\n'.join(("Hello world", "-----------",
-                "You are in the third tab."))
+        Label:
+            text: 'DOWNLOAD LOG'
