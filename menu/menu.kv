@@ -6,6 +6,7 @@
     selected_color: 255,255,255,1
     deselected_color:  255,255,255,1
     color: 0, 0, 0, 1
+    font_size: '12sp'
 
 
 <Test>:
@@ -26,6 +27,7 @@
             Label:
                 size_hint: 1.0,.25
                 text: 'UPTIME  365:11:15:30'
+
             Label:
                 size_hint: 1.0,.25
                 text: 'LAST  SERVER  CONTACT  365:11:15:30'
@@ -143,6 +145,7 @@
         BoxLayout:
             orientation: 'horizontal'
             BoxLayout:
+                size_hint: .5,1
                 orientation: 'vertical'
                 Label:
                     size_hint: 1,.1
@@ -166,6 +169,7 @@
                     id: list_view_id
                     size_hint: 1,1
 
+
                     adapter:
                         la.ListAdapter(
                         data=[product.name for product in get_products_by_category('PreRolls', 'Satvia')],
@@ -184,7 +188,7 @@
 
                     adapter:
                         la.ListAdapter(
-                        data=[product.canabis_brand for product in get_products_by_category('PreRolls', 'Satvia')],
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -200,7 +204,7 @@
 
                     adapter:
                         la.ListAdapter(
-                        data=[product.canabis_strain for product in get_products_by_category('PreRolls', 'Satvia')],
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -258,6 +262,7 @@
                 Label:
                     size_hint: 1,.1
                     text: 'cbd_level'
+
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
