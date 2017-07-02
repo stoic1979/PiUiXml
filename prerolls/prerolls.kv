@@ -68,7 +68,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -81,9 +81,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -95,7 +97,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
@@ -145,7 +147,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -158,9 +160,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -172,7 +176,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
@@ -222,7 +226,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -235,12 +239,14 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: 'OTHER'
+                        size_hint: .4,.9
+                        text: '[b]OTHER[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
-                        size_hint: 1,1
+                        size_hint: 1,.9
                         text: ''
                         canvas.before:
                             Color:
@@ -249,30 +255,66 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ## other List
+                 ### other list
                 BoxLayout:
 
                     orientation: 'vertical'
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Blue Gorilla               $14'
-                        color: 0,0,0,1
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies     $14'
-                        color: 0,0,0,1
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Key Lime Gorilla           $14'
-                        color: 0,0,0,1
-                    Label:
-                        text: ''
+
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Blue Gorilla'
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .2
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Forum Sin Mint Cookies'
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .2
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Key Lime Gorilla '
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .4
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
                 Label:
                     size_hint: 1,.10
                     text: ''
@@ -310,7 +352,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -323,9 +365,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -337,7 +381,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
@@ -387,7 +431,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -400,9 +444,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -414,7 +460,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
@@ -463,7 +509,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -476,9 +522,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: 'OTHER'
+                        size_hint: .4,.9
+                        text: '[b]OTHER[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -490,29 +538,66 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
                     size_hint: 1,.03
                     text: ''
+                 ### other list
                 BoxLayout:
 
                     orientation: 'vertical'
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Blue Gorilla               $14'
-                        color: 0,0,0,1
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies     $14'
-                        color: 0,0,0,1
-                    Label:
-                        size_hint: 1, .2
-                        text: 'BAM Rosin Rockets: Key Lime Gorilla           $14'
-                        color: 0,0,0,1
-                    Label:
-                        text: ''
+
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Blue Gorilla'
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .2
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Forum Sin Mint Cookies'
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .2
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            size_hint: 1, .2
+                            text: 'BAM Rosin Rockets: Key Lime Gorilla '
+                            color: 0,0,0,1
+							#halign: 'left'
+							font_size: '13sp'
+                        Label:
+                            size_hint: .25, .4
+                            text: '$14'
+                            color: 0,0,0,1
+							font_size: '13sp'
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
+					Label:
+						text: ''
                 Label:
                     size_hint: 1,.10
                     text: ''
@@ -550,7 +635,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -563,9 +648,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.9
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -577,7 +664,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
@@ -627,7 +714,7 @@
                     size_hint: 1,.05
                     orientation: 'horizontal'
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                     Label:
@@ -640,9 +727,11 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: 1,.1
-                        text: '$ 14'
+                        size_hint: .4,.9
+                        text: '[b]$14[/b]'
                         color: 0, 0, 0, 1
+						font_size: '22sp'
+						markup: True
 
                     Label:
                         size_hint: 1,.9
@@ -654,7 +743,7 @@
                                 pos: self.pos
                                 size: self.size
                     Label:
-                        size_hint: .4,.1
+                        size_hint: .2,.1
                         text: ''
                         color: 0, 0, 0, 1
                 Label:
