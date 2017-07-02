@@ -29,6 +29,7 @@
                 size_hint: 1,1
                 rgba: 1,0,1,5
                 text: 'PREROLLS'
+                font_size: '50sp'
                 font_name: 'GothamMedium'
 
         BoxLayout:
@@ -49,8 +50,9 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
-                    size_hint: 1,.1
+                    size_hint: 1,.5
                     text: 'SATIVA'
+                    font_size: '30sp'
                     canvas.before:
                         Color:
                             rgba: 255, 0, 0, 1
@@ -99,15 +101,41 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_first_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Nightmare'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Bubba Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Body & Mind'
+                        color: 0,0,0,1
 
                 Label:
                     size_hint: 1,.1
@@ -150,15 +178,42 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_second_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                # second list
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Matrix 3PK Cones'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Whillie Nelson Reserve'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'GLP Green Life Production prerolls'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Cannabiotix'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'SST Californias Finest'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'PW Killa Collection'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Cookies'
+                        color: 0,0,0,1
                 Label:
                     size_hint: 1,.1
                     text: ''
@@ -200,18 +255,26 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_other_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                ## other List
+                BoxLayout:
 
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla               $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies     $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla           $14'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
                 Label:
-                    size_hint: 1,.01
+                    size_hint: 1,.10
                     text: ''
                     canvas.before:
                         Color:
@@ -229,8 +292,9 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
-                    size_hint: 1,.1
+                    size_hint: 1,.5
                     text: 'HYBRID'
+                    font_size: '30sp'
                     canvas.before:
                         Color:
                             rgba: 0, 128, 0, 1
@@ -279,15 +343,41 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_first_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Nightmare'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Bubba Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Body & Mind'
+                        color: 0,0,0,1
 
                 Label:
                     size_hint: 1,.1
@@ -330,15 +420,41 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_second_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Matrix 3PK Cones'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Whillie Nelson Reserve'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'GLP Green Life Production prerolls'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Cannabiotix'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'SST Californias Finest'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'PW Killa Collection'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Cookies'
+                        color: 0,0,0,1
                 Label:
                     size_hint: 1,.1
                     text: ''
@@ -380,18 +496,25 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_other_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
 
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla               $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies     $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla           $14'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
                 Label:
-                    size_hint: 1,.01
+                    size_hint: 1,.10
                     text: ''
                     canvas.before:
                         Color:
@@ -409,8 +532,9 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
-                    size_hint: 1,.1
+                    size_hint: 1,.5
                     text: 'INDICA'
+                    font_size: '30sp'
                     canvas.before:
                         Color:
                             rgba: 255,0,255, 1
@@ -459,15 +583,41 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_first_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Sin Mint Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Nightmare'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: White Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Bubba Cookies'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Body & Mind'
+                        color: 0,0,0,1
 
                 Label:
                     size_hint: 1,.1
@@ -510,15 +660,43 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_second_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+
+                # second List
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Matrix 3PK Cones'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Whillie Nelson Reserve'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'GLP Green Life Production prerolls'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'Cannabiotix'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'SST Californias Finest'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'PW Killa Collection'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Strawberry'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Cookies'
+                        color: 0,0,0,1
 
                 Label:
                     size_hint: 1,.1
@@ -561,17 +739,26 @@
                 Label:
                     size_hint: 1,.03
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-                    adapter:
-                        la.ListAdapter(
-                        data=[product for product in get_other_data()],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                 ### other list
+                BoxLayout:
+
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Blue Gorilla                  $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Forum Sin Mint Cookies     $14'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: 1, .2
+                        text: 'BAM Rosin Rockets: Key Lime Gorilla           $14'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
                 Label:
-                    size_hint: 1,.01
+                    size_hint: 1,.10
                     text: ''
                     canvas.before:
                         Color:
