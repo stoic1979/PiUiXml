@@ -56,6 +56,15 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
+                    size_hint: 1,.2
+                    text: ''
+                    canvas.before:
+                        Color:
+                            rgba: 219.0/255.0, 109.0/255.0, 85.0/255.0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
                     size_hint: 1,.5
                     text: 'SATIVA'
                     font_size: '30sp'
@@ -340,6 +349,15 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
+                    size_hint: 1,.2
+                    text: ''
+                    canvas.before:
+                        Color:
+                            rgba: 219.0/255.0, 109.0/255.0, 85.0/255.0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
                     size_hint: 1,.5
                     text: 'HYBRID'
                     font_size: '30sp'
@@ -622,6 +640,15 @@
             ###################################################################
             BoxLayout:
                 orientation: 'vertical'
+                Label:
+                    size_hint: 1,.2
+                    text: ''
+                    canvas.before:
+                        Color:
+                            rgba: 219.0/255.0, 109.0/255.0, 85.0/255.0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
                 Label:
                     size_hint: 1,.5
                     text: 'INDICA'
