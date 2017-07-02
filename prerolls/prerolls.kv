@@ -1,6 +1,10 @@
 #:import lv kivy.uix.listview
 #:import la kivy.adapters.listadapter
 #:import get_products_by_category products_parser.get_products_by_category
+#:import get_first_data products_parser.get_first_data
+#:import get_second_data products_parser.get_second_data
+#:import get_other_data products_parser.get_other_data
+
 
 <ListItemButton>:
     selected_color: 255,255,255,1
@@ -30,6 +34,12 @@
         BoxLayout:
 
             orientation: 'horizontal'
+            canvas.before:
+                Color:
+                    rgba: 255,255,255,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
             ###################################################################
             #                                                                 #
@@ -48,12 +58,154 @@
                             pos: self.pos
                             size: self.size
                     font_name: 'GothamMedium'
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                        data=[product for product in get_first_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_second_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: 'OTHER'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_other_data()],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -86,12 +238,154 @@
                             pos: self.pos
                             size: self.size
                     font_name: 'GothamMedium'
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Hybrid')],
+                        data=[product for product in get_first_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_second_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: 'OTHER'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_other_data()],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)
@@ -124,12 +418,155 @@
                             pos: self.pos
                             size: self.size
                     font_name: 'GothamMedium'
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
                 ListView:
                     id: list_view_id
                     size_hint: 1,1
                     adapter:
                         la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Indica')],
+                        data=[product for product in get_first_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.1
+                        text: '$ 14'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_second_data()],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    color: 0, 0, 0, 1
+                BoxLayout:
+                    size_hint: 1,.05
+                    orientation: 'horizontal'
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: 1,.9
+                        text: 'OTHER'
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        size_hint: 1,.9
+                        text: ''
+                        canvas.before:
+                            Color:
+                                rgba: 0, 0, 0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    Label:
+                        size_hint: .4,.1
+                        text: ''
+                        color: 0, 0, 0, 1
+                Label:
+                    size_hint: 1,.03
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+                    adapter:
+                        la.ListAdapter(
+                        data=[product for product in get_other_data()],
                         selection_mode='single',
                         allow_empty_selection=False,
                         cls=lv.ListItemButton)

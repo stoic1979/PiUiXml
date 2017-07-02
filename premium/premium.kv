@@ -17,11 +17,33 @@
         BoxLayout:
             size_hint: .20,1
             orientation: 'vertical'
-            Label:
-                text: 'VALUE SHELF'
+            BoxLayout:
                 size_hint: 1,.1
+                orientation: 'horizontal'
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    canvas.before:
+                        Color:
+                            rgba: 255, 0, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    size_hint: 1,.1
+                    text: 'VALUE SHELF'
+
+                Label:
+                    size_hint: 1,.1
+                    text: ''
+                    canvas.before:
+                        Color:
+                            rgba: 255, 0, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
             Label:
-                size_hint: 1, .01
+                size_hint: 1, .1
                 text: ''
             Label:
                 size_hint: 1,.1

@@ -113,6 +113,8 @@ def get_all_products():
     return pp.get_products()
 
 
+
+
 if __name__ == "__main__":
     get_products_by_id()
 """

@@ -108,6 +108,33 @@ def get_all_products():
     return pp.get_products()
 
 
+def get_first_data():
+    return ['BAM Rosin Rockets: Blue Gorilla',
+            'BAM Rosin Rockets: Forum Sin Mint Cookies',
+            'BAM Rosin Rockets: Key Lime Gorilla',
+            'BAM Rosin Rockets: Sin Mint Cookies',
+            'BAM Rosin Rockets: White Nightmare',
+            'BAM Rosin Rockets: White Strawberry',
+            'BAM Rosin Rockets: Bubba Cookies',
+            'BAM Rosin Rockets: Body & Mind']
+
+
+def get_second_data():
+    return ['Matrix 3PK Cones',
+            'Whillie Nelson Reserve',
+            'GLP Green Life Production prerolls',
+            'Cannabiotix',
+            'SST Californias Finest',
+            'PW Killa Collection',
+            'BAM Rosin Rockets: Key Lime Strawberry',
+            'BAM Rosin Rockets: Blue Cookies']
+
+
+def get_other_data():
+    return ['BAM Rosin Rockets: Blue Gorilla               $14',
+            'BAM Rosin Rockets: Forum Sin Mint Cookies     $14',
+            'BAM Rosin Rockets: Key Lime Gorilla           $14']
+
 if __name__ == "__main__":
 
     print get_products_by_category('PreRolls', 'Satvia')
