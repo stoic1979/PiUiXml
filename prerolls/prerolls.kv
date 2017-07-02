@@ -14,6 +14,12 @@
     BoxLayout:
         size_hint: 1,1
         orientation: 'vertical'
+		canvas.before:
+        	Color:
+	        	rgba: 29.0/255.0, 29.0/255.0, 29.0/255.0, 1
+			Rectangle:
+            	pos: self.pos
+            	size: self.size
 
         ###################################################################
         #                                                                 #
@@ -25,12 +31,12 @@
             #right_padding: 5
             #halign: 'left'
             Label:
-                rgba: 1,0,1,5
+                rgba: 186.0/255.0, 205.0/255.0, 43.0/255.0, 1
                 size_hint: 1,1
-                rgba: 1,0,1,5
-                text: 'PREROLLS'
+                text: '[b]PREROLLS[b]'
                 font_size: '50sp'
                 font_name: 'GothamMedium'
+				markup: True
 
         BoxLayout:
 
@@ -55,7 +61,7 @@
                     font_size: '30sp'
                     canvas.before:
                         Color:
-                            rgba: 255, 0, 0, 1
+                            rgba: 219.0/255.0, 109.0/255.0, 85.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
@@ -320,7 +326,7 @@
                     text: ''
                     canvas.before:
                         Color:
-                            rgba: 255, 0, 0, 1
+                            rgba: 219.0/255.0, 109.0/255.0, 85.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
@@ -339,7 +345,7 @@
                     font_size: '30sp'
                     canvas.before:
                         Color:
-                            rgba: 0, 128, 0, 1
+                            rgba: 135.0/255.0, 188.0/255.0, 80.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
@@ -603,7 +609,7 @@
                     text: ''
                     canvas.before:
                         Color:
-                            rgba: 0, 128, 0, 1
+                            rgba: 135.0/255.0, 188.0/255.0, 80.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
@@ -622,7 +628,7 @@
                     font_size: '30sp'
                     canvas.before:
                         Color:
-                            rgba: 255,0,255, 1
+                            rgba: 129.0/255.0, 86.0/255.0, 118.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
@@ -890,7 +896,7 @@
                     text: ''
                     canvas.before:
                         Color:
-                            rgba: 255, 0, 255, 1
+                            rgba: 129.0/255.0, 86.0/255.0, 118.0/255.0, 1
                         Rectangle:
                             pos: self.pos
                             size: self.size
