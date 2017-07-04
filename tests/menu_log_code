@@ -1,0 +1,45 @@
+TabbedPanelItem:
+        text: 'Log'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                size_hint: 1,.1
+                text: 'DOWNLOAD LOG'
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: ''
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+
+                ListView:
+                    id: list_view_id
+                    size_hint: 1,1
+
+                    adapter:
+                        la.ListAdapter(
+                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
+                        selection_mode='single',
+                        allow_empty_selection=False,
+                        cls=lv.ListItemButton)
+                Label:
+                    text: ''
