@@ -24,40 +24,55 @@
         text: 'System'
         BoxLayout:
             orientation: 'vertical'
+            canvas.before:
+                Color:
+                    rgba: 255,255,255, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                size_hint: 1.0,.2
+                text: ''
             Label:
                 size_hint: 1.0,.25
                 text: 'UPTIME  365:11:15:30'
+                color: 0, 0, 0, 1
 
             Label:
                 size_hint: 1.0,.25
                 text: 'LAST  SERVER  CONTACT  365:11:15:30'
+                color: 0, 0, 0, 1
+
             BoxLayout:
                 orientation: 'horizontal'
-                size_hint: 1.0, .6
-
+                size_hint: 1, .7
+                padding: 30
                 Label:
-                    size_hint: .2, 1
                     text: ''
-                BoxLayout:
-                    orientation: 'horizontal'
-                    size_hint: 1, .7
-                    padding: 30
-                    Label:
-                        size_hint: .5, 1
-                        text: 'API KEY'
-                    TextInput:
-                        size_hint: .5, 1
-                        text: ''
+                Label:
+                    size_hint: .3, .5
+                    text: 'API KEY'
+                    color: 0, 0, 0, 1
+                TextInput:
+                    size_hint: .5, .5
+                    text: ''
+                Label:
+                    text: ''
                 Label:
                     size_hint: .2, 1
                     text: ''
             AnchorLayout:
                 Button:
-                    size_hint: .25, .25
+                    size_hint: .15, .15
                     text: "PI SYSTEM UPDATE"
+                    color: 0, 0, 0, 1
 
             Label:
-                text: ""
+                text: ''
+            Label:
+                text: ''
+
+
 
 ###################################################################
 #                                                                 #
@@ -68,72 +83,125 @@
         text: 'Menu'
         BoxLayout:
             orientation: 'vertical'
+            canvas.before:
+                Color:
+                    rgba: 255,255,255, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'THEME'
+                    color: 0,0,0,1
                 Spinner:
                     text: 'Green Rush'
+                    color: 0,0,0,1
                     values: ('Green Rush', 'Essence')
-
+                    canvas.before:
+                        Color:
+                            rgba: 255,255,255, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    text: ''
+            Label:
+                size_hint: 1,.5
+                text: ''
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'GOOGLE FONT'
+                    color: 0,0,0,1
                 Spinner:
                     text: 'ARIAL'
+                    color: 0,0,0,1
                     values: ('ARIAL', 'ARIAL NARROW')
+                Label:
+                    text: ''
+            Label:
+                size_hint: 1,.5
+                text: ''
+
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'FONT SIZE'
+                    color: 0,0,0,1
                 TextInput:
                     text: ''
+                Label:
+                    text: ''
+
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'FONT COLOR'
                 TextInput:
                     text: ''
+                Label:
+                    text: ''
+
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'SCROLL RATE'
+                    color: 0,0,0,1
                 TextInput:
                     text: ''
+                Label:
+                    text: ''
+
             BoxLayout:
                 orientation: 'horizontal'
                 size_hint: 1, .7
                 padding: 30
-
+                Label:
+                    text: ''
                 Label:
                     size_hint: .5, 1
                     text: 'UPDATE MENU'
+                    color: 0,0,0,1
                 Spinner:
                     text: '1 MIN'
                     values: ('1 MIN', '2 MIN')
+                Label:
+                    text: ''
+            Label:
+                size_hint: 1,.2
+                text: ''
             Label:
                 text: 'CATEGORIES TO DISPLAY'
+                color: 0,0,0,1
+            Label:
+                size_hint: 1,.5
+                text: ''
 
 ###################################################################
 #                                                                 #
@@ -143,216 +211,783 @@
     TabbedPanelItem:
         text: 'Inventory'
         BoxLayout:
-            orientation: 'horizontal'
-            BoxLayout:
-                size_hint: .5,1
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'id'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.id for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'name'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.name for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+            orientation: 'vertical'
+            canvas.before:
+                Color:
+                    rgba: 255,255,255, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                size_hint: 1,.1
+                text: ''
 
             BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'canabis_brand'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
+                orientation: 'horizontal'
 
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+                    size_hint: .5,1
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'id'
+                        color: 0,0,0,1
+                    Label:
+                        text: '132561'
+                        color: 0,0,0,1
+                    Label:
+                        text: '132562'
+                        color: 0,0,0,1
+                    Label:
+                        text: '132563'
+                        color: 0,0,0,1
+                    Label:
+                        text: '132567'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132570'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132571'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132572'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132576'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132579'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132580'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132587'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132588'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132591'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '132595'
+                        color: 0, 0, 0, 1
 
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'canabis_strain'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1,.1
+                        text: 'name'
+                        color: 0,0,0,1
+                    Label:
+                        text: 'Moxie Battery'
+                        font_size: '11sp'
+                        color: 0,0,0,1
+                    Label:
+                        text: 'Zico Torch Lighter'
+                        font_size: '11sp'
+                        color: 0,0,0,1
+                    Label:
+                        text: 'Scorch Torch Lighter'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Rokin Disposable Concentrate pen'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Intimacy Arousal Massage Oil -Evergreen'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Elite CBD Pactches'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Coffee Scrub'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'CBD Body Scrub'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'AMA CBD Infused Body Lotion'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Lavender Vanilla Massage Oil Evergreen'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'EGO THC Lip Balm'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'AMA Lip Balm'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Charlottes Web Topoical Gel- Marys'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Apothecanna Everyday Creme 8fl oz'
+                        font_size: '11sp'
+                        color: 0, 0, 0, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'canabis_brand'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
 
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'canabis_strain'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Other'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Other'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Other'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Other'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: 'Topicals'
+                        color: 0, 0, 0, 1
 
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'category'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'category'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
 
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'subcategory'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
 
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'subcategory'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'thc_level'
+                        color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
+                        Label:
+                            text: '%'
+                            color: 0, 0, 0, 1
 
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'cbd_level'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '%'
+                        color: 0, 0, 0, 1
 
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'thc_level'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'cbn_level'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'thc_level_type'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'cbd_level_type'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'cbn_level_type'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'cost'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
 
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: ''
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '20'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '25'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '25'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '15'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '32'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '16'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '10'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '15'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '25'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '32'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '10'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '15'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '50'
+                        color: 0, 0, 0, 1
+                    Label:
+                        text: '40'
+                        color: 0, 0, 0, 1
 
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'cbd_level'
 
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'cbn_level'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'thc_level_type'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'cbd_level_type'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'cbn_level_type'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    size_hint: 1,.1
-                    text: 'cost'
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
 
 
 
@@ -368,44 +1003,294 @@
         text: 'Log'
         BoxLayout:
             orientation: 'vertical'
-            Label:
-                size_hint: 1,.1
-                text: 'DOWNLOAD LOG'
+            canvas.before:
+                Color:
+                    rgba: 255,255,255, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             BoxLayout:
-                orientation: 'horizontal'
+                size_hint: 1,.2
+                orientation: 'vertical'
                 Label:
                     text: ''
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
-
-                ListView:
-                    id: list_view_id
-                    size_hint: 1,1
-
-                    adapter:
-                        la.ListAdapter(
-                        data=[product.title_str() for product in get_products_by_category('PreRolls', 'Satvia')],
-                        selection_mode='single',
-                        allow_empty_selection=False,
-                        cls=lv.ListItemButton)
+                Label:
+                    size_hint: 1,.1
+                    text: 'DOWNLOAD LOG'
+                    color: 0,0,0,1
                 Label:
                     text: ''
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'INTERNET UNAVAILABLE'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'NETWORK UNAVAILABLE'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                BoxLayout:
+                    size_hint: 1,.2
+                    orientation: 'horizontal'
+                    Label:
+                        text: ''
+                    Label:
+                        size_hint: .3,.3
+                        text: '06/26/2017'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .3,.3
+                        text: '00:00:00'
+                        color: 0,0,0,1
+                    Label:
+                        size_hint: .5,.3
+                        text: 'MENU UPDATE SUCESSFUL'
+                        color: 0,0,0,1
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+                    Label:
+                        text: ''
+
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+
+
+
