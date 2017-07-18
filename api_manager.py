@@ -16,13 +16,15 @@ class ApiManager:
         function gets access token from greenrush server
         """
         url = 'https://www.greenrush.com/api/v2/authorize'
+        token = '$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/YENp7qzlrXRRx971tielybhNE6'
         try:
             headers = {'accept': 'application/vnd.greenrush.v2+json',
                        'content-type': 'application/json'}
-            data = '{"token": "$2y$10$ehNDTqORidMNnL4xDW.bTemFH3/' \
-                   'YENp7qzlrXRRx971tielybhNE6"}'
+            data = {"token": token}
 
-            r = requests.post(url, headers=headers, data=data)
+            print "data:", data
+
+            r = requests.post(url, headers=headers, data=json.dumps(data))
             print r.status_code
             print r.headers
             print r.content
