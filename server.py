@@ -34,5 +34,11 @@ def premium():
     templateData = {'title': 'Home Page'}
     return render_template("premium.html", **templateData)
 
+
+@app.route("/menu")
+def menu():
+    templateData = {'title': 'Menu'}
+    return render_template("menu.html", **templateData)
+
 if __name__ == '__main__':
     app.run(debug=True)
